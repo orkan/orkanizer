@@ -1,0 +1,46 @@
+<!-- BEGIN: MAIN --><!DOCTYPE html>
+<html>
+<head>
+	<title>{C_NAME} - {SUBTITLE} - {TITLE}</title>
+	<meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+	<base href="{BASE_SUBEX}" />
+	<noscript><meta http-equiv="refresh" content="0; URL=../sys/noscript.htm"/></noscript>
+	<link href="sys/mobile.css" rel="stylesheet" />
+	<script src="sys/mobile.js"></script>
+</head>
+<body>
+
+
+<div data-role="page">
+
+	<div data-role="header" data-position="fixed">
+		<div data-role="controlgroup" data-type="horizontal">
+			<a href="#" data-rel="back" data-role="button" data-icon="arrow-l">Wróć</a>
+			<a href="{INDEX_FILE}" data-ajax="false" data-role="button" data-direction="reverse" data-icon="home">Index</a>
+			<a href="#" data-rel="top" data-ajax="false" data-role="button" data-icon="arrow-u" data-iconpos="right" data-theme="b">Top</a>
+		</div>
+	</div>
+
+	<div data-role="content">
+		<h1>
+			{TITLE}<br>{SUBTITLE}<br>
+			{C_NAME} <img class="flag flag-{C_ISO}" alt="{C_ONZ}" src="sys/flags/blank.gif" /><br>
+			<span>Punkty: {C_POIS}/{POIS}, <time title="{PHP.dat.date_long}">Aktualizacja: {PHP.dat.date}</time></span>
+		</h1>
+
+		<ul data-role="listview" data-inset="true">
+			<!-- BEGIN: POI --><li><a href="{PHP.cfg.tpl_sub_dir}{POI_FILE}#item{POI_ID}" data-ajax="false">{POI_TITLE}</a><span class="ui-li-count">{POI_COM}</span></li>
+			<!-- END: POI -->
+		</ul>
+
+		<h3>Orkan <a href="mailto:ukryty@gmail.com" class="hidden_email">ukryty@gmail.com</a></h3>
+	</div>
+
+</div>
+
+
+</body>
+</html>
+<!-- END: MAIN -->

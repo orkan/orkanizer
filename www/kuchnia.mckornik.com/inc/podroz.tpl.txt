@@ -1,0 +1,1 @@
+<!-- BEGIN: MAIN --># {TITLE} {JOURNEY_LABEL} - {JOURNEY_TITLE}{JOURNEY_DESC}<!-- BEGIN: RECIPE -->### {RECIPE_TITLE}**Kategoria:**{RECIPE_CATEGORY}**Składniki:**<!-- BEGIN: INGREDIENTS -->* {RECIPE_INGREDIENT}<!-- END: INGREDIENTS -->**Sposób przygotowania:**{RECIPE_DIRECTIONS}.<!-- END: RECIPE --><!-- END: MAIN -->

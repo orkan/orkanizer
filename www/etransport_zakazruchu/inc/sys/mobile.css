@@ -1,0 +1,67 @@
+@import url(jquerymobile/jquery.mobile.min.css);
+@import url(flags/flags.css);
+
+body {background: #000}
+:focus {outline: 0;}
+.flag {vertical-align: middle;}
+.ui-li .flag {margin-top: 2px;}
+
+/* jquery.mobile fixes */
+.ui-bar-a input.ui-input-text {color: #aca899;}
+.ui-collapsible-heading-status  {font-weight: normal !important; font-size: .9em !important; position: static; left: 0;}
+.ui-collapsible-content {padding: 4px 0 10px 8px;}
+.ui-content .ui-listview-inset {margin: 1em -8px;}
+.ui-mobile div[role="main"], .ui-mobile div[data-role="page"]  {background: #222 url(jquerymobile/images/bg-dark.[orkan].png) !important;}
+div[data-role="collapsible"] a[data-role="button"] {font-size: .8em;}
+.ui-focus input.ui-input-text {color: #ccc;}
+input.ui-input-text  {color: #878787;}
+.ui-select {width: 100%;}
+.ui-field-contain { padding: 1.5em 0 !important; margin: 0; border-bottom-width: 1px !important; }
+a.ui-link {font-weight: normal !important;}
+a.ui-link:hover, a.ui-link:active {color: #fff !important;}
+
+/* page header */
+div[data-role="content"] > h1 {margin: -.3em 0 1em; font-size: 1.3em; font-weight: bold; text-align: center;}
+div[data-role="content"] > h1:first-letter {color:#ff9a0d;}
+div[data-role="content"] > h1 > span {margin: .5em 0 0; display: block; font-weight: normal; font-size: .6em;}
+div[data-role="content"] > h1 > span time  {white-space: nowrap;}
+/* sub-pages header */
+div[data-role="content"] > h2 {margin: -.3em 0 1em; font-size: 1.3em; font-weight: bold;}
+div[data-role="content"] > h2 span {margin: .5em 0 -.5em; display: block; font-size: .6em;}
+/* staticmaps */
+div[data-scale="0"] div[data-role="content"] > h2 {text-align: center;}
+/* sub-pages bars */
+div[role="banner"],
+div[role="contentinfo"] {text-align: center; height: 3em;}
+/* page footer */
+div[data-role="content"] > h3 {margin: 2em 0 0; color: #555; font-weight: normal; font-size: .7em; text-align: center;}
+div[data-role="content"] > h3 a.ui-link {color: #555;}
+
+/* jquery.mobile add */
+.ui-icon-orkan-pin,.ui-icon-orkan-earth,.ui-icon-orkan-atom  {background-image: url(jquerymobile/images/icons-18-white.[orkan].png);}
+.ui-icon-orkan-pin {background-position: -0 50%;}
+.ui-icon-orkan-earth {background-position: -18px 50%;}
+.ui-icon-orkan-atom {background-position: -36px 50%;}
+
+/* listview customs */
+.comments_block  > div {margin: 1em 0; padding: .5em 1em; font-size: .9em;}
+.comments_block time {display: block; width: 45%; float: right; text-align: right; font-size: 12px; font-weight: normal;}
+.comments_block time, .comments_block h3 {margin: 0.3em 0;}
+
+/* sub-pages staticmaps */
+div[data-role="collapsible"] img.staticmap {width: 98%;}
+.ui-mobile div[data-scale="0"],
+.ui-mobile div[data-scale="0"]  div[role="main"]  {background: #000 !important;}
+
+/* other customs */
+.search_results .ui-btn-up-a	 {background: #444;}
+.search_by .ui-block-b .ui-btn {margin: auto 5px;}
+.search_by .ui-grid-a .ui-block-a {width: 60%;}
+.search_by .ui-grid-a .ui-block-b {width: 40%;}
+table#zakazy td {vertical-align: top;}
+table#zakazy td:nth-child(1),
+table#zakazy td:nth-child(3) {white-space: nowrap;}
+table#zakazy td:nth-child(2) {text-align: center;}
+table#zakazy tr:nth-child(even) {background: #333;}
+table#zakazy b {font-weight: normal;}
+div[data-type="horizontal"] a[data-role="button"]:nth-child(2) .ui-btn-inner {padding-right: 1.5em;}

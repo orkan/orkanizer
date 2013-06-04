@@ -1,0 +1,80 @@
+<!-- BEGIN: MAIN --><!DOCTYPE html>
+<html>
+<head>
+	<title>{SUBTITLE} - {TITLE}</title>
+	<meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+	<base href="{BASE_INDEX}" />
+	<noscript><meta http-equiv="refresh" content="0; URL=sys/noscript.htm"/></noscript>
+	<link href="sys/mobile.css" rel="stylesheet" />
+	<script src="sys/mobile.js"></script>
+
+	<script src="sys/pois.js"></script>
+	<script>
+	$(function(){
+		$("form").submit(function(){return false});
+		$("#search_id, #search_name").bind("change", function(e, ui) {
+			seachInputFind(this.id, $(this).val());
+			$(this).blur();
+		});
+		$("#search_by_cc").bind("change", function(e, ui) {
+			var val = $(this).val();
+			if(val) window.location = "{PHP.cfg.tpl_sub_dir}{SUBEX_FILE_JS}";
+		});
+		setTimeout(function(){
+			$('form[role="search"] .ui-focus').removeClass("ui-focus");
+		},100);
+	});
+	</script>
+</head>
+<body>
+
+
+<div data-role="page">
+
+	<div data-role="content">
+		<h1>
+			{TITLE}<br>{SUBTITLE}
+			<span>Punkty: {POIS}, Kraje: {COUNTRIES}, <time title="{PHP.dat.date_long}">Aktualizacja: {PHP.dat.date}</time></span>
+		</h1>
+
+		<div data-role="fieldcontain" class="search_by">
+			<form class="ui-listview-filter ui-bar-a" role="search">
+				<fieldset class="ui-grid-a">
+				<div class="ui-block-a"><input id="search_id" placeholder="Szukaj ID..." data-type="search" /></div>
+				<div class="ui-block-b"><a href="#" data-role="button" data-info="kill input focus!">Szukaj</a></div>
+				</fieldset>
+			</form>
+			<div id="search_id_list" class="search_results"></div>
+		</div>
+
+		<div data-role="fieldcontain" class="search_by">
+			<form role="search" class="ui-listview-filter ui-bar-a">
+				<fieldset class="ui-grid-a">
+				<div class="ui-block-a"><input id="search_name" placeholder="Szukaj nazwy..." data-type="search" /></div>
+				<div class="ui-block-b"><a href="#" data-role="button" data-info="kill input focus!">Szukaj</a></div>
+				</fieldset>
+			</form>
+			<div id="search_name_list" class="search_results"></div>
+		</div>
+
+		<div data-role="fieldcontain">
+			<form>
+				<select id="search_by_cc">
+					<option value="">Szukaj wg. kraju...</option>
+						<!-- BEGIN: COUNTRY --><option value="{C_ISO}">{C_NAME}</option>
+						<!-- END: COUNTRY -->
+				</select>
+			</form>
+		</div>
+
+		<h3>Orkan <a href="mailto:ukryty@gmail.com" class="hidden_email">ukryty@gmail.com</a></h3>
+	</div>
+
+</div>
+
+
+</body>
+</html>
+<!-- END: MAIN -->

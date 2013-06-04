@@ -1,0 +1,29 @@
+<!-- BEGIN: MAIN --><!DOCTYPE html>
+<html>
+<head>
+	<title>{POI_TITLE} | staticmap | sz: {POI_GEO_SZ}, dł: {POI_GEO_DL}</title>
+	<meta charset="utf-8" />
+	<base href="{BASE_MAPEX}" />
+	<link href="sys/mobile.css" rel="stylesheet" />
+	<script src="sys/mobile.js"></script>
+</head>
+<body>
+
+<div data-role="page" data-scale="0">
+
+	<div data-role="content">
+		<h2>
+			{POI_TITLE}
+			<a href="{PHP.cfg.tpl_sub_dir}{C_FILE}" data-ajax="false"><img class="flag flag-{POI_ISO}" alt="{POI_ONZ}" src="sys/flags/blank.gif" /></a><br>
+			{POI_GEO_SZ} {POI_GEO_DL}<br>
+			<a href="#" data-rel="back"><img class="staticmap" alt="staticmap {POI_GEO_SZ} {POI_GEO_DL}" src="{MAPEX_PATH}{M_IMAGE}" /></a>
+		</h2>
+
+		<h3>Orkan <a href="mailto:ukryty@gmail.com" class="hidden_email">ukryty@gmail.com</a></h3>
+	</div>
+
+</div>
+
+</body>
+</html>
+<!-- END: MAIN -->
