@@ -1,1 +1,0 @@
-eTransport - Dobry Parking. Pliki do nawigacji: *.gpx (textowy xml, dobry do konwersji na inne formaty), *.ov2 (UM-y dla TomTom-a) Dodatkowo jako bonus doda³em wersjê offline strony www z opisem wszystkich parkingów. 

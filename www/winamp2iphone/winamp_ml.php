@@ -247,7 +247,7 @@ if($_SERVER["REQUEST_METHOD"] == 'POST' && !empty($_POST['winamp_dir']))
     $log[] = 'Przenoszę playlisty do katalogu ML ['.count($m3us_new).']';
 
     // ========================
-    // Podsunowanie
+    // Podsumowanie
     // ========================
     $stats['mp3s']['all'] = $stats['mp3s']['valid_1'] + $stats['mp3s']['miss'];
     $log[] = str_repeat('-', 100);
@@ -277,7 +277,7 @@ if($_SERVER["REQUEST_METHOD"] == 'POST' && !empty($_POST['winamp_dir']))
     }
 
     $t->assign(array(
-        'LOG' => implode("\n", $log),
+        'LOG' => implode("\n", array_map('log_escape_helper', $log)),
     ));
     $t->parse('MAIN.DONE');
 }

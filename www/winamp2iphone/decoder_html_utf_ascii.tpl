@@ -66,6 +66,7 @@ input[type=submit] { padding: .5em; width: 200px; height: 6em; font-weight:bold;
             <label for="iconv" title="Convert string to requested character encoding">iconv(</label>
             <select name="enc_from" id="enc_from">
                 <option value="UTF-8" selected>UTF-8</option>
+                <option value="UTF-16">UTF-16</option>
                 <option value="ASCII">ASCII</option>
                 <option value="ISO-8859-1">ISO-8859-1</option>
                 <option value="ISO-8859-2">ISO-8859-2</option>
@@ -76,6 +77,7 @@ input[type=submit] { padding: .5em; width: 200px; height: 6em; font-weight:bold;
             ,
             <select name="enc_to" id="enc_to">
                 <option value="UTF-8">UTF-8</option>
+                <option value="UTF-16">UTF-16</option>
                 <option value="ASCII" selected>ASCII</option>
                 <option value="ISO-8859-1">ISO-8859-1</option>
                 <option value="ISO-8859-2">ISO-8859-2</option>
@@ -131,4 +133,5 @@ input[type=submit] { padding: .5em; width: 200px; height: 6em; font-weight:bold;
 </div>
 </body>
 </html>
+
 <!-- END: MAIN -->

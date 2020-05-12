@@ -5,8 +5,14 @@
 <meta charset="utf-8" />
 <link href="../../../_help/reset.[meyerweb].css" rel="stylesheet" />
 <style>
+html { 
+    background-image: url(../shared/gfx/pat03.png), url(../shared/gfx/bg08.png);
+    background-repeat: repeat-y, repeat;
+    background-size: 82px, auto;
+    background-position: 860px top, left top;
+}
 body { margin: 0 2em; font: .9em "Courier New", Courier, monospace; }
-#container { width:1100px; }
+#container { margin-left: 2em; width: 800px; }
 
 h1,h2,h3,h4 { padding: 0.5em 0 .1em; font-weight: bold; }
 h1 { font-size: 300%; }
@@ -24,7 +30,7 @@ input[type=submit] { padding: .5em; width: 200px; font-weight:bold; }
 
 .console { font-family: monospace; }
 .error { margin: 2em 0; padding: 2em; text-align:center; border: 5px double red; }
-.logger { margin: 1em 0; padding: 1em; border: 1px solid gray; }
+.logger { margin: 1em 0; padding: 1em; white-space: pre-wrap; border: 1px solid gray; }
 </style>
 <script src="../../../_jquery/jquery-1.7.1ui-1.8.17/jquery.js"></script>
 </head>
@@ -83,7 +89,7 @@ input[type=submit] { padding: .5em; width: 200px; font-weight:bold; }
 
 <script type="text/javascript">
     $(function(){
-        $('#winamp_tip').click(function() {$("#winamp_dir").val("C:\\\Documents and Settings\\\Administrator\\\Application Data\\\Winamp\\\Plugins\\\ml")});
+        $('#winamp_tip').click(function() {$("#winamp_dir").val("C:\\\Users\\\Administrator\\\AppData\\\Roaming\\\Winamp\\\Plugins\\\ml")});
     });
 </script>
 </form>

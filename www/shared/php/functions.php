@@ -20,11 +20,13 @@ function ShowErrors($s) {
 // Szuka sciezek w podanym pliku
 // Zwraca bezwzgledne sciezki w tablicy.
 // Wywoluje filesize() na kazdym wpisie, ale nie ma problemu, bo PHP keszuje wyniki.
+// [$all]: true - zapisuje nawet nieodnalezione pozycje
 function ImportPlaylist($path, $all=false) {
     $out = array();
     if(empty($path)) ShowErrors('Podaj ścieżkę do playlist!');
 
-    if($buff = file_get_contents($path))
+    $buff = file_get_contents($path);
+    if($buff !== false)
     {
         $buff = str_replace("\r", '', $buff);
         $buff = explode("\n", $buff);
@@ -46,12 +48,17 @@ function ImportPlaylist($path, $all=false) {
                     $out[] = $rpath;
             }
         }
-        if(count($out)) return $out;
-
-        $s = count($buff) ? 'Brak dobrych wpisów' : 'Pusty plik';
-        ShowErrors("$s: $path");
+        return $out;
+        
     }
-    else ShowErrors("Nie mogę odnalezć pliku lub pusty plik: $path");
+    else ShowErrors("Nie mogę odnalezć pliku: $path");
+}
+// ========================
+// Zapis playlisty z tablicy
+// Dodaje komentarz w pierwszej lini (iTunes pomija pierwsza linie!)
+function ExportPlaylist($path, $arr) {
+    global $cfg;
+    file_put_contents($path, $cfg['log_intro'].implode("\n", $arr));
 }
 
 function get_execution_time()
@@ -373,6 +380,13 @@ function myhtmlentities($s) {
 	//return htmlspecialchars(unhtmlentities($s));
 	//return "htmlspecialchars($s)";
 }
+function log_escape_helper($s) {
+    return str_replace(
+            array( '\\'),
+            array('&#92;'),
+            $s
+        );
+}
 function unhtmlentities($s) {
 	return htmlspecialchars_decode($s, ENT_QUOTES);
 }
@@ -392,7 +406,7 @@ function rrmdir($dir) {
 	elseif(is_file($dir)) if(unlink($dir)) $cfiles++;
 	return $cfiles;
 }
-// copies files and non-empty directories
+// copy files and non-empty directories
 function rcopy($src, $dst) {
 	static $cfiles = 0;
 	//if(file_exists($dst)) rrmdir($dst);
@@ -403,4 +417,28 @@ function rcopy($src, $dst) {
 	}
 	elseif(is_file($src)) if(copy($src, $dst)) $cfiles++;
 	return $cfiles;
+}
+
+// Lepsze mieszanie playlist
+function ork_shuffle(&$a) {
+	$count = count($a);
+	if(!$count) return false;
+
+	$out = array();
+
+    // Generuj unikalne klucze
+    foreach($a as $v) {
+        $k = sprintf('%u', crc32($v));
+		$k = str_shuffle($k);
+        $out[$k] = $v;
+    }
+    
+    // Soruj klucze, czyli mieszaj wartosci!
+    ksort($out, SORT_NUMERIC);
+    
+    // Usun klucze
+    $a = array_merge(array(), $out);
+
+	//$a = $out;
+    return true;
 }
